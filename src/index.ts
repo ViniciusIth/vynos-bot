@@ -1,5 +1,6 @@
 import { SapphireClient } from '@sapphire/framework';
 import { GatewayIntentBits } from 'discord.js';
+import { connect, set } from 'mongoose';
 import config from './config';
 
 const client = new SapphireClient({
@@ -12,5 +13,11 @@ const client = new SapphireClient({
 });
 
 console.log(new Date().toTimeString() + '\n');
+
+// Database options
+set('strictQuery', true);
+connect('mongodb://127.0.0.1:27017/vynos \n')
+  .then((mongo) => console.log('Succesfully connected to DB. \n'))
+  .catch((reason) => console.error(reason));
 
 client.login(config.token);
