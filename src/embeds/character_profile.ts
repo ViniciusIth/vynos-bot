@@ -1,5 +1,5 @@
 import { EmbedBuilder } from 'discord.js';
-import { ICharacter } from '../schemas/character';
+import { ICharacter } from 'schemas/character';
 
 export function buildProfile(character: ICharacter) {
   const characterProfile = new EmbedBuilder()

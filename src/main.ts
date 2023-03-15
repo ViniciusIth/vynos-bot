@@ -1,7 +1,7 @@
 import { SapphireClient } from '@sapphire/framework';
+import config from 'config';
 import { GatewayIntentBits } from 'discord.js';
 import { connect, set } from 'mongoose';
-import config from './config';
 
 const client = new SapphireClient({
   loadMessageCommandListeners: true,

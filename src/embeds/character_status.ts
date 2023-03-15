@@ -1,5 +1,5 @@
 import { EmbedBuilder } from 'discord.js';
-import { ICharacter } from '../schemas/character';
+import { ICharacter } from 'schemas/character';
 
 export function buildStatus(character: ICharacter) {
   const characterStatus = new EmbedBuilder().setTitle('Status').setDescription(`

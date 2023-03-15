@@ -1,6 +1,6 @@
 import { Schema, model } from 'mongoose';
 
-export const CharacterSchema = new Schema({
+export const CharacterSchema = new Schema<ICharacter>({
   userId: { type: String, required: true },
   guildChannelId: { type: String, required: true },
   embedMessageId: { type: String, required: true },
@@ -81,7 +81,7 @@ export interface ICharacterSkills {
   survival: number;
 }
 
-export interface ICharacter extends Document {
+export interface ICharacter {
   id: string;
   userId: string;
   guildChannelId: string;

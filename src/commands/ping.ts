@@ -4,8 +4,8 @@ import {
   ChatInputCommand,
   Command,
 } from '@sapphire/framework';
+import config from 'config';
 import type { Message } from 'discord.js';
-import config from '../config';
 
 export class PingCommand extends Command {
   public constructor(context: Command.Context, options: Command.Options) {

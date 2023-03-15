@@ -1,6 +1,6 @@
 import { Client } from 'discord.js';
-import { buildDetails, buildStatus } from '../embeds';
-import { ICharacter } from '../schemas/character';
+import { buildDetails, buildStatus } from 'embeds';
+import { ICharacter } from 'schemas/character';
 import { getMessage } from './misc.utils';
 
 export async function reloadCharacterSheet(

@@ -1,6 +1,6 @@
 import { EmbedBuilder } from 'discord.js';
-import { ICharacter } from '../schemas/character';
-import { getDecimalPart } from '../utils/character.utils';
+import { ICharacter } from 'schemas/character';
+import { getDecimalPart } from 'utils';
 
 export function buildDetails(character: ICharacter) {
   const characterDetails = new EmbedBuilder()
