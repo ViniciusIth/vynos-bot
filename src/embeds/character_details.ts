@@ -2,7 +2,7 @@ import { EmbedBuilder } from 'discord.js';
 import { ICharacter } from '../schemas/character';
 import { getDecimalPart } from '../utils/character.utils';
 
-function buildDetails(character: ICharacter) {
+export function buildDetails(character: ICharacter) {
   const characterDetails = new EmbedBuilder()
     .setDescription(
       `
@@ -59,5 +59,3 @@ ${character.story}`
 
   return characterDetails;
 }
-
-export default buildDetails;

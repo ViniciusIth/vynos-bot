@@ -1,7 +1,7 @@
 import { EmbedBuilder } from 'discord.js';
 import { ICharacter } from '../schemas/character';
 
-function buildStatus(character: ICharacter) {
+export function buildStatus(character: ICharacter) {
   const characterStatus = new EmbedBuilder().setTitle('Status').setDescription(`
 > Level: ${character.level}
 > HP: ${character.maxHealth}

@@ -1,7 +1,7 @@
 import { EmbedBuilder } from 'discord.js';
 import { ICharacter } from '../schemas/character';
 
-function buildProfile(character: ICharacter) {
+export function buildProfile(character: ICharacter) {
   const characterProfile = new EmbedBuilder()
     .setDescription(
       `
