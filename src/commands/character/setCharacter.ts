@@ -107,6 +107,11 @@ export class SetCharacterCommand extends Subcommand {
                   .setDescription('The new value for the status')
                   .setRequired(true)
               )
+          )
+          .addSubcommand((command) =>
+            command
+              .setName('story')
+              .setDescription('Sets the character story side')
           );
       }
     );
@@ -223,5 +228,41 @@ export class SetCharacterCommand extends Subcommand {
       content: `${status} set to ${newValue}`,
       ephemeral: true,
     });
+  }
+
+  public async chatInputStory(
+    interaction: Command.ChatInputCommandInteraction
+  ) {
+    const character = await Character.findOne({
+      $or: [
+        { guildChannelId: interaction.channelId },
+        { userId: interaction.user.id },
+      ],
+    });
+
+    if (!character) {
+      interaction.reply({
+        embeds: [charNotFoundError(interaction)],
+        ephemeral: true,
+      });
+      return;
+    }
+
+    const modal = new ModalBuilder()
+      .setTitle('Character Story')
+      .setCustomId('set_story');
+
+    const characterStoryInput = new TextInputBuilder()
+      .setCustomId('character_story')
+      .setLabel('Character Story')
+      .setStyle(TextInputStyle.Paragraph);
+
+    const firstActionRow: any = new ActionRowBuilder().addComponents(
+      characterStoryInput
+    );
+
+    modal.addComponents(firstActionRow);
+
+    await interaction.showModal(modal);
   }
 }

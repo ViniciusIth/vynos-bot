@@ -8,7 +8,7 @@ import * as colors from 'colors';
 import { Character } from 'schemas/character';
 import { reloadCharacterSheet } from 'utils';
 
-export class ModalHandler extends InteractionHandler {
+export class SetStoryHandler extends InteractionHandler {
   public constructor(ctx: PieceContext, options: InteractionHandler.Options) {
     super(ctx, {
       ...options,
